@@ -23,6 +23,11 @@ const server = net.createServer(connection => {
                     connection.write('+PONG\r\n')
                 }
                 break
+                case 'echo': {
+                    const value = input[1]
+                    connection.write(`$${ value.length }\r\n${ value }\r\n`)
+                }
+                break
                 case 'set': {
                     const key = input[1]
                     const value = input[2]

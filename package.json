@@ -1,7 +1,7 @@
 {
   "name": "redis-clone-js",
   "version": "1.0.0",
-  "description": "A very simple redis clone using nodejs",
+  "description": "A very simple redis like server built using nodejs",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
