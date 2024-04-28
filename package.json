@@ -1,0 +1,18 @@
+{
+  "name": "redis-clone-js",
+  "version": "1.0.0",
+  "description": "A very simple redis clone using nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis"
+  ],
+  "author": "ashwaniYDV",
+  "license": "ISC",
+  "dependencies": {
+    "redis-errors": "^1.2.0"
+  }
+}
