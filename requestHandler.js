@@ -1,6 +1,5 @@
+const store = require('./store');
 const RESPParser = require('./respParser');
-
-let store = {};
 
 async function handleRequest(data, connection) {
     const parser = new RESPParser(data);
