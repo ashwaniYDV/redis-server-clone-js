@@ -1,17 +1,21 @@
 const net = require('net')
-const Parser = require('./respParser')
+const RESPParser = require('./respParser')
 
 const PORT = 3000
 let store = {}
 
+
 const server = net.createServer(connection => {
-  console.log('client connected...')
+    console.log('client connected...')
 
-  connection.on('data', data => {
-    // data comes as buffer
+    connection.on('data', async data => {
+        console.log('Received data:', data.toString())
 
-    const parser = new Parser({
-        returnReply: (input) => {
+        try {
+            const parser = new RESPParser(data)
+            const input = await parser.readNewRequest()
+            console.log('RESP parsed request:', input)
+
             const command = input[0].toLowerCase()
 
             switch (command) {
@@ -46,14 +50,16 @@ const server = net.createServer(connection => {
                 }
                 break
             }
-        },
-        returnError: (error) => {
-            console.log('error = ', error)
+        } catch (error) {
+            console.error('Error parsing request:', error)
+            connection.write(`-${ error }\r\n`)
         }
     })
 
-    parser.execute(data)
-  })
+    connection.on('end', () => {
+        console.log('client disconnected...')
+    })
+
 })
 
 server.listen(PORT, () => console.log(`Server started on port ${ PORT }`))
