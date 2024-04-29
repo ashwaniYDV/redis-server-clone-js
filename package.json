@@ -2,9 +2,9 @@
   "name": "redis-clone-js",
   "version": "1.0.0",
   "description": "A very simple redis like server built using nodejs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

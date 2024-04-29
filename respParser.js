@@ -1,5 +1,3 @@
-// https://github.com/NodeRedis/node-redis-parser/blob/master/lib/parser.js
-
 const NULL_BULK_STRING = "NULL";
 const READ_CACHE_MAX = 8192; // 8 KB
 const ITEM_LEN_MAX = 536870912; // 512 MB

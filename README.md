@@ -29,3 +29,8 @@ OK
 127.0.0.1:3000> get name
 ashwani
 ```
+
+References
+----------
+* https://redis.io/docs/latest/develop/reference/protocol-spec/
+* https://github.com/NodeRedis/node-redis-parser/blob/master/lib/parser.js
