@@ -7,12 +7,12 @@ const server = net.createServer(connection => {
     console.log('client connected...');
 
     connection.on('data', async data => {
-        console.log('Received data:', data.toString());
+        // console.log('Received data:', data.toString());
         
         try {
             await handleRequest(data, connection);
         } catch (error) {
-            console.error('Error:', error);
+            // console.error('Error:', error);
             connection.write(`-${error}\r\n`);
         }
     });

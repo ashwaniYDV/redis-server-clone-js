@@ -4,7 +4,7 @@ const RESPParser = require('./respParser');
 async function handleRequest(data, connection) {
     const parser = new RESPParser(data);
     const input = await parser.readNewRequest();
-    console.log('RESP parsed request:', input);
+    // console.log('RESP parsed request:', input);
 
     const command = input[0].toLowerCase();
 

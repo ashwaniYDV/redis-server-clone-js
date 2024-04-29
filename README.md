@@ -30,6 +30,28 @@ OK
 ashwani
 ```
 
+Performance
+-----------
+My server's performance
+
+```
+$ redis-benchmark -p 3000 -t set,get, -n 100000 -q
+
+SET: 80128.20 requests per second
+GET: 89847.26 requests per second
+```
+
+
+Redis docker server's performance
+```
+$ redis-benchmark -t set,get, -n 100000 -q
+
+SET: 41858.52 requests per second
+GET: 40209.09 requests per second
+```
+
+Note: My code has huge performance due to less complexity and overhead 
+
 References
 ----------
 * https://redis.io/docs/latest/develop/reference/protocol-spec/
