@@ -39,6 +39,10 @@ async function handleRequest(data, connection) {
             }
             break;
         }
+        // case 'config': {
+        //     connection.write('*2\r\n$3\r\n900\r\n$1\r\n1\r\n');
+        //     break;
+        // }
         default: {
             connection.write('-ERR unknown command\r\n');
         }

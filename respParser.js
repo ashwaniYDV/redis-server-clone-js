@@ -74,6 +74,14 @@ class RESPParser {
 module.exports = RESPParser;
 
 // Example usage with a buffer
-// const buffer = Buffer.from("*2\r\n$3\r\nget\r\n$7\r\nashwani\r\n"); // Replace with your buffer
-// const parser = new RESPParser(buffer);
-// const request = await parser.readNewRequest();
+// (async () => {
+//     try {
+//         // const buffer = Buffer.from("*2\r\n$3\r\nget\r\n$7\r\nashwani\r\n"); // Replace with your buffer
+//         const buffer = Buffer.from('*2\r\n$3\r\n900\r\n$1\r\n1\r\n')
+//         const parser = new RESPParser(buffer);
+//         const request = await parser.readNewRequest();
+//         console.log(request);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// })();
